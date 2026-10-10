@@ -248,7 +248,7 @@ router.delete(
   async (req: CustomRequest, res: Response) => {
     try {
       // validate req.body with predefined validator
-      const result = zStudentId.safeParse(req.body); // check zod
+      const result = zStudentId.safeParse(req.body.studentId); // check zod
       if (!result.success) {
         return res.status(400).json({
           success: false,

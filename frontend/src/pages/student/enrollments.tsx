@@ -51,6 +51,7 @@ export default function StudentEnrollmentsPage() {
   const [changeError, setChangeError] = useState<string | null>(null);
   const [changing, setChanging] = useState(false);
   const [deleteError, setDeleteError] = useState<string | null>(null);
+  const dropenrollment = useEnrollmentStore((s) => s.dropEnrollment);
 
   const me = students.find((s) => s.studentId === studentId);
   const myEnrollments = enrollments.filter((e) => e.studentId === studentId);
@@ -111,7 +112,7 @@ export default function StudentEnrollmentsPage() {
     if (!studentId) return;
     setDeleteError(null);
     try {
-      await dropEnrollment(studentId, courseId);
+      await dropenrollment(studentId, courseId);
     } catch (err) {
       setDeleteError((err as Error).message);
     }
