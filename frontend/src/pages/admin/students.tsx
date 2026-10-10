@@ -31,6 +31,7 @@ export default function AdminStudentsPage() {
     }
   };
 
+
   const enrollmentsOf = (studentId: string) =>
     enrollments.filter((e) => e.studentId === studentId);
 
