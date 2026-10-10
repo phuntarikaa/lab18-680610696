@@ -39,7 +39,7 @@ export default function StudentEnrollmentsPage() {
     enrollments,
     enroll,
     updateEnrollment,
-    dropEnrollment,
+    //dropEnrollment,
   } = useEnrollmentStore();
 
   const [open, setOpen] = useState(false);
